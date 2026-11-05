@@ -1,0 +1,29 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 9 * * 1"   # weekly, so a broken runner or dependency shows up even without commits
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: git identity for tests that build throwaway repos
+        run: git config --global user.email ci@example.com && git config --global user.name ci
+      - name: tests
+        run: python -m unittest discover -s tests -v
+      - name: quickstart 1
+        run: python build_network_index.py --connections examples/connections.example.csv --targets examples/targets.example.txt --out /tmp/lnm --export-date 2026-11-01 --limit-bytes 600 && python lookup.py --index /tmp/lnm "Lumen Harbor"

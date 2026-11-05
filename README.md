@@ -1,5 +1,7 @@
 # linkedin-network-map
 
+[![tests](https://github.com/gkmr/linkedin-network-map/actions/workflows/tests.yml/badge.svg)](https://github.com/gkmr/linkedin-network-map/actions/workflows/tests.yml) ![python](https://img.shields.io/badge/python-3.9%20%7C%203.12-blue) ![deps](https://img.shields.io/badge/dependencies-stdlib%20only-brightgreen) [![license](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+
 Turns your LinkedIn connections export into a ranked, company-indexed map of warm paths into the companies you want to work at. It runs on your machine and needs nothing but Python 3.
 
 ## The problem
