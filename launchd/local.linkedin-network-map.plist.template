@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  LaunchAgent template for linkedin-network-map. Replace the four __PLACEHOLDERS__ with absolute paths
+  (the README has a sed one-liner), save as ~/Library/LaunchAgents/local.linkedin-network-map.plist, then:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/local.linkedin-network-map.plist
+  Runs daily at 10:15. On a day with no new archive, refresh.py exits in well under a second.
+-->
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>local.linkedin-network-map</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>__REPO_DIR__/refresh.sh</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>__REPO_DIR__</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>LANG</key>
+		<string>en_US.UTF-8</string>
+		<key>LINKEDIN_MAP_EXPORTS_DIR</key>
+		<string>__EXPORTS_DIR__</string>
+		<key>LINKEDIN_MAP_OUT_DIR</key>
+		<string>__OUT_DIR__</string>
+		<key>LINKEDIN_MAP_STATE_DIR</key>
+		<string>__STATE_DIR__</string>
+	</dict>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>10</integer>
+		<key>Minute</key>
+		<integer>15</integer>
+	</dict>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>StandardOutPath</key>
+	<string>__STATE_DIR__/launchd.log</string>
+	<key>StandardErrorPath</key>
+	<string>__STATE_DIR__/launchd.log</string>
+</dict>
+</plist>

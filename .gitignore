@@ -1,0 +1,23 @@
+# your real data never belongs in the repo
+*.zip
+Connections.csv
+network-map-*.csv
+!examples/expected/network-map-*.csv
+archive-manifest.json
+out/
+_superseded/
+targets.txt
+*.log
+.refresh.lock
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# misc
+.DS_Store
+.state/
+*.bak
+*.pre-v*
+node_modules/

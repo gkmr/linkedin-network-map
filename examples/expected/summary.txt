@@ -1,0 +1,9 @@
+T1     Lumen Harbor                4 paths  best: Maya Okafor, VP, Product (16)
+T1     Orbitwell                   2 paths  best: Hana Sato, Chief Product Officer (16)
+T2     Kestrel Data                3 paths  best: Omar Haddad, Head of Platform (11)
+T2     Marigold Systems            3 paths  best: Rosa Delgado, Recruiting Coordinator | text [number] (10)
+T3     Nimbus Forge                2 paths  best: Yusuf Demir, Product Lead (4)
+T3     Nettle & Finch              2 paths  best: Clara Holm, Co-Founder & CEO (7)
+SEARCH Talbot Search Partners      2 paths  best: Samir Qureshi, Senior Recruiter (10)
+ALUM   Vellum Works                2 paths  best: Tomas Novak, VP Engineering (11)
+30 connections kept of 33 rows (1 hidden, 2 duplicates); 20 at targets; 16 index files

@@ -1,0 +1,223 @@
+{
+ "schema": "network-index-manifest v1",
+ "generator": "build_network_index.py v4.0",
+ "export_date": "2026-11-01",
+ "map_file": "network-map-2026-11-01.csv",
+ "size_limit_bytes": 600,
+ "lookup_rule": "Normalize the company name: Unicode NFKD, drop combining marks, lowercase, turn every run of characters outside a-z and 0-9 into one space, trim (so 'Nettle & Finch' becomes 'nettle finch'). The first character of that key gives the letter: A-Z, or 0 for anything else. Take the rows of 'files' with that letter. Part 0 means the whole letter is one file. Otherwise pick the part where first_company <= key <= last_company in plain string order. Open index/<file>. If no part covers the key, the company is not in the index. A connection whose company maps to a target is filed under the target's name; any other connection is filed under its own company, and a blank company is '(blank)' under letter 0. Within a company, people are listed best path first. A single company bigger than the size limit gets a part to itself.",
+ "person_fields": {
+  "n": "name",
+  "t": "title",
+  "s": "score (higher is a better path)",
+  "u": "LinkedIn URL",
+  "c": "connected-on date",
+  "e": "email or empty",
+  "r": "the raw company text, only when it differs from the key (for example 'Ex-X, now Y')"
+ },
+ "files": {
+  "network-index-0.json": {
+   "letter": "0",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 134,
+   "first_company": "(blank)",
+   "last_company": "(blank)"
+  },
+  "network-index-A.json": {
+   "letter": "A",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 147,
+   "first_company": "ashgrove clinics",
+   "last_company": "ashgrove clinics"
+  },
+  "network-index-B.json": {
+   "letter": "B",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 149,
+   "first_company": "brightwater goods",
+   "last_company": "brightwater goods"
+  },
+  "network-index-F.json": {
+   "letter": "F",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 131,
+   "first_company": "freelance",
+   "last_company": "freelance"
+  },
+  "network-index-J.json": {
+   "letter": "J",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 159,
+   "first_company": "juniper rail",
+   "last_company": "juniper rail"
+  },
+  "network-index-K1.json": {
+   "letter": "K",
+   "part": 1,
+   "companies": 1,
+   "rows": 3,
+   "bytes": 454,
+   "first_company": "kestrel data",
+   "last_company": "kestrel data"
+  },
+  "network-index-K2.json": {
+   "letter": "K",
+   "part": 2,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 164,
+   "first_company": "kestrel data recovery",
+   "last_company": "kestrel data recovery"
+  },
+  "network-index-L1.json": {
+   "letter": "L",
+   "part": 1,
+   "companies": 1,
+   "rows": 4,
+   "bytes": 618,
+   "first_company": "lumen harbor",
+   "last_company": "lumen harbor"
+  },
+  "network-index-L2.json": {
+   "letter": "L",
+   "part": 2,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 156,
+   "first_company": "lumen harborview hotels",
+   "last_company": "lumen harborview hotels"
+  },
+  "network-index-M.json": {
+   "letter": "M",
+   "part": 0,
+   "companies": 1,
+   "rows": 3,
+   "bytes": 490,
+   "first_company": "marigold systems",
+   "last_company": "marigold systems"
+  },
+  "network-index-N.json": {
+   "letter": "N",
+   "part": 0,
+   "companies": 2,
+   "rows": 4,
+   "bytes": 525,
+   "first_company": "nettle finch",
+   "last_company": "nimbus forge"
+  },
+  "network-index-O.json": {
+   "letter": "O",
+   "part": 0,
+   "companies": 2,
+   "rows": 3,
+   "bytes": 437,
+   "first_company": "orbitwell",
+   "last_company": "orbitwell capital"
+  },
+  "network-index-Q.json": {
+   "letter": "Q",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 144,
+   "first_company": "quillfeather media",
+   "last_company": "quillfeather media"
+  },
+  "network-index-S.json": {
+   "letter": "S",
+   "part": 0,
+   "companies": 1,
+   "rows": 1,
+   "bytes": 141,
+   "first_company": "saltmarsh studio",
+   "last_company": "saltmarsh studio"
+  },
+  "network-index-T.json": {
+   "letter": "T",
+   "part": 0,
+   "companies": 1,
+   "rows": 2,
+   "bytes": 330,
+   "first_company": "talbot search partners",
+   "last_company": "talbot search partners"
+  },
+  "network-index-V.json": {
+   "letter": "V",
+   "part": 0,
+   "companies": 1,
+   "rows": 2,
+   "bytes": 300,
+   "first_company": "vellum works",
+   "last_company": "vellum works"
+  }
+ },
+ "targets": {
+  "Lumen Harbor": {
+   "tier": "T1",
+   "key": "lumen harbor",
+   "connections": 4
+  },
+  "Orbitwell": {
+   "tier": "T1",
+   "key": "orbitwell",
+   "connections": 2
+  },
+  "Kestrel Data": {
+   "tier": "T2",
+   "key": "kestrel data",
+   "connections": 3
+  },
+  "Marigold Systems": {
+   "tier": "T2",
+   "key": "marigold systems",
+   "connections": 3
+  },
+  "Nimbus Forge": {
+   "tier": "T3",
+   "key": "nimbus forge",
+   "connections": 2
+  },
+  "Nettle & Finch": {
+   "tier": "T3",
+   "key": "nettle finch",
+   "connections": 2
+  },
+  "Talbot Search Partners": {
+   "tier": "SEARCH",
+   "key": "talbot search partners",
+   "connections": 2
+  },
+  "Vellum Works": {
+   "tier": "ALUM",
+   "key": "vellum works",
+   "connections": 2
+  }
+ },
+ "counts": {
+  "connections_rows": 33,
+  "hidden_rows_dropped": 1,
+  "dupes_removed_by_url": 1,
+  "dupes_removed_by_name_company": 1,
+  "export_rows_kept": 30,
+  "rows_without_url": 1,
+  "mapped_to_target": 20,
+  "unmapped": 10,
+  "old_map_rows": 0,
+  "carried_over": 0,
+  "map_rows_total": 30,
+  "index_companies": 18,
+  "index_files": 16,
+  "index_rows": 30,
+  "phone_guard_text_redactions": 1,
+  "phone_guard_emails_dropped": 1
+ }
+}

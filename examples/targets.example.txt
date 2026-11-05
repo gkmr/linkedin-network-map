@@ -1,0 +1,41 @@
+# Targets for linkedin-network-map. All companies here are invented.
+#
+# One group per [section]. In a group, each line is   Label: alias, alias
+# The label is an alias too. Aliases match whole words in the Company field
+# after normalizing (lowercase, punctuation becomes a space, & and . kept),
+# so "lumen harbor" does not match "Lumen Harborview Hotels".
+#
+# Group priority, highest first: tier1, tier2, tier3, search_firms, shared_employer.
+# Points: tier1 5, tier2 3, search_firms 3, shared_employer 2, tier3 1 (doubled in the score).
+
+[tier1]
+Lumen Harbor: lumenharbor
+Orbitwell
+
+[tier2]
+Kestrel Data: kestrel
+Marigold Systems: marigold
+
+[tier3]
+Nimbus Forge
+Nettle & Finch: nettle and finch
+
+[search_firms]
+Talbot Search Partners: talbot search, talbot partners
+
+[shared_employer]
+# companies you worked at; someone there now is an alum path
+Vellum Works: vellum
+
+[exclude]
+# different companies whose names contain a target alias
+orbitwell capital
+kestrel data recovery
+
+[seniority]
+# first level that matches wins, in this order: vp, exec, director, recruiter, ic_senior
+exec: chief, ceo, cto, cpo, coo, cfo, founder, cofounder, president, general manager
+vp: vp, svp, evp, vice president, head of
+director: director
+recruiter: recruiter, recruiting, talent acquisition, talent partner, sourcer
+ic_senior: senior, sr, staff, principal, lead
